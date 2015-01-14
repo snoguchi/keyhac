@@ -43,6 +43,7 @@ def configure(keymap):
         if window.getProcessName() in ("cmd.exe",            # cmd
                                        "mintty.exe",         # mintty
                                        "emacs.exe",          # Emacs
+                                       "emacs-w32.exe",      # Emacs
                                        "runemacs.exe",       # Emacs
                                        "gvim.exe",           # GVim
                                        # "eclipse.exe",        # Eclipse
