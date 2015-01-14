@@ -431,7 +431,7 @@ def configure(keymap):
     # マルチストロークキーの設定
     keymap_emacs["Esc"]            = keymap.defineMultiStrokeKeymap("Esc")
     keymap_emacs["LC-OpenBracket"] = keymap.defineMultiStrokeKeymap("C-OpenBracket")
-    keymap_emacs["LC-x"]           = keymap.defineMultiStrokeKeymap("C-x")
+    # keymap_emacs["LC-x"]           = keymap.defineMultiStrokeKeymap("C-x")
     keymap_emacs["LC-q"]           = keymap.defineMultiStrokeKeymap("C-q")
 
     # 0-9キーの設定
@@ -486,9 +486,9 @@ def configure(keymap):
     keymap_im["LC-o"]    = toggle_input_method
 
     # 「ファイル操作」のキー設定
-    keymap_emacs["LC-x"]["C-f"] = reset_search(reset_counter(reset_mark(find_file)))
-    keymap_emacs["LC-x"]["C-s"] = reset_search(reset_counter(reset_mark(save_buffer)))
-    keymap_emacs["LC-x"]["C-w"] = reset_search(reset_counter(reset_mark(write_file)))
+    # keymap_emacs["LC-x"]["C-f"] = reset_search(reset_counter(reset_mark(find_file)))
+    # keymap_emacs["LC-x"]["C-s"] = reset_search(reset_counter(reset_mark(save_buffer)))
+    # keymap_emacs["LC-x"]["C-w"] = reset_search(reset_counter(reset_mark(write_file)))
 
     # 「カーソル移動」のキー設定
     keymap_emacs["LC-b"] = reset_search(reset_counter(repeat(mark(backward_char))))
@@ -519,7 +519,7 @@ def configure(keymap):
     keymap_emacs["Esc"]["v"]            = reset_search(reset_counter(mark(scroll_up)))
     keymap_emacs["LC-OpenBracket"]["v"] = reset_search(reset_counter(mark(scroll_up)))
 
-    keymap_emacs["LC-v"] = reset_search(reset_counter(mark(scroll_down)))
+    # keymap_emacs["LC-v"] = reset_search(reset_counter(mark(scroll_down)))
     keymap_emacs["LC-l"] = reset_search(reset_counter(recenter))
 
     # 「カット / コピー / 削除 / アンドゥ」のキー設定
@@ -549,34 +549,34 @@ def configure(keymap):
     keymap_emacs["LC-z"]          = reset_search(reset_counter(reset_mark(undo)))
     keymap_emacs["LC-Slash"]      = reset_search(reset_counter(reset_mark(undo)))
     keymap_emacs["LC-Underscore"] = reset_search(reset_counter(reset_mark(undo)))
-    keymap_emacs["LC-x"]["u"]     = reset_search(reset_counter(reset_mark(undo)))
+    # keymap_emacs["LC-x"]["u"]     = reset_search(reset_counter(reset_mark(undo)))
     keymap_emacs["LC-Space"]      = reset_search(reset_counter(set_mark_command))
 
     # 英語キーボードを利用する場合、LC-2 の設定（数引数の指定で利用）が LC-Atmark の設定で上書きされるのでコメント化
     # keymap_emacs["LC-Atmark"]     = reset_search(reset_counter(set_mark_command))
 
-    keymap_emacs["LC-x"]["h"]     = reset_search(reset_counter(reset_mark(mark_whole_buffer)))
-    keymap_emacs["LC-x"]["C-p"]   = reset_search(reset_counter(reset_mark(mark_page)))
+    # keymap_emacs["LC-x"]["h"]     = reset_search(reset_counter(reset_mark(mark_whole_buffer)))
+    # keymap_emacs["LC-x"]["C-p"]   = reset_search(reset_counter(reset_mark(mark_page)))
 
     # 「バッファ / ウインドウ操作」のキー設定
-    keymap_emacs["LC-x"]["k"] = reset_search(reset_counter(reset_mark(kill_buffer)))
-    keymap_emacs["LC-x"]["o"] = reset_search(reset_counter(reset_mark(other_window)))
+    # keymap_emacs["LC-x"]["k"] = reset_search(reset_counter(reset_mark(kill_buffer)))
+    # keymap_emacs["LC-x"]["o"] = reset_search(reset_counter(reset_mark(other_window)))
 
     # 「文字列検索 / 置換」のキー設定
     keymap_emacs["LC-r"] = reset_counter(reset_mark(isearch_backward))
     keymap_emacs["LC-s"] = reset_counter(reset_mark(isearch_forward))
 
     # 「キーボードマクロ」のキー設定
-    if 1:
+    # if 1:
         # 日本語キーボードの場合
-        keymap_emacs["LC-x"]["S-8"] = kmacro_start_macro
-        keymap_emacs["LC-x"]["S-9"] = kmacro_end_macro
-    else:
+        # keymap_emacs["LC-x"]["S-8"] = kmacro_start_macro
+        # keymap_emacs["LC-x"]["S-9"] = kmacro_end_macro
+    # else:
         # 英語キーボードの場合
-        keymap_emacs["LC-x"]["S-9"] = kmacro_start_macro
-        keymap_emacs["LC-x"]["S-0"] = kmacro_end_macro
+        # keymap_emacs["LC-x"]["S-9"] = kmacro_start_macro
+        # keymap_emacs["LC-x"]["S-0"] = kmacro_end_macro
 
-    keymap_emacs["LC-x"]["e"] = reset_search(reset_counter(repeat(kmacro_end_and_call_macro)))
+    # keymap_emacs["LC-x"]["e"] = reset_search(reset_counter(repeat(kmacro_end_and_call_macro)))
 
     # 「その他」のキー設定
     keymap_emacs["LC-m"]        = reset_counter(reset_mark(repeat(newline)))
@@ -585,8 +585,8 @@ def configure(keymap):
     keymap_emacs["LC-i"]        = reset_counter(reset_mark(repeat(indent_for_tab_command)))
     keymap_emacs["Tab"]         = reset_counter(reset_mark(repeat(indent_for_tab_command)))
     keymap_emacs["LC-g"]        = reset_search(reset_counter(reset_mark(keybord_quit)))
-    keymap_emacs["LC-x"]["C-c"] = reset_search(reset_counter(reset_mark(kill_emacs)))
-    keymap_emacs["LC-x"]["C-y"] = reset_search(reset_counter(reset_mark(clipboard_list)))
+    # keymap_emacs["LC-x"]["C-c"] = reset_search(reset_counter(reset_mark(kill_emacs)))
+    # keymap_emacs["LC-x"]["C-y"] = reset_search(reset_counter(reset_mark(clipboard_list)))
 
     # Excel のキー設定（オプション）
     if 1:
